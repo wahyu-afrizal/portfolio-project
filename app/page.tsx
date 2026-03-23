@@ -6,13 +6,13 @@ export default function Home() {
           SEO & Growth Systems
         </span>
         <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl lg:text-6xl">
-          Building scalable SEO systems with 3+ years of technical SEO
-          experience.
+          Wahyu Afrizal is an SEO specialist with a focus on technical SEO,
+          site structure, and content-led growth.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg">
-          I design and optimize technical SEO frameworks that help teams improve
-          crawl efficiency, strengthen site architecture, and grow organic
-          visibility across large, complex websites.
+          I work on the practical side of SEO: improving technical foundations,
+          making websites easier to crawl and organize, and building content
+          processes that support steady organic visibility over time.
         </p>
       </section>
       <section className="mx-auto mt-24 max-w-5xl">
@@ -21,8 +21,8 @@ export default function Home() {
             Selected Projects
           </h2>
           <p className="mt-4 text-base leading-7 text-zinc-600">
-            A few representative projects focused on technical SEO execution,
-            content systems, and sustainable organic growth.
+            Examples of work across technical SEO, content planning, and search
+            processes designed to be clear, repeatable, and useful in practice.
           </p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -31,8 +31,9 @@ export default function Home() {
               Enterprise Technical Audit
             </h3>
             <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Placeholder project for a full-site technical SEO audit covering
-              crawl health, indexation, and site architecture improvements.
+              A technical review of crawlability, indexation, internal linking,
+              and site structure to identify issues affecting search
+              performance on a large website.
             </p>
           </article>
           <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
@@ -40,9 +41,9 @@ export default function Home() {
               Content Growth Framework
             </h3>
             <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Placeholder project for building a scalable content planning
-              system aligned with search intent, topic clusters, and performance
-              tracking.
+              A content planning framework built around search intent, topic
+              structure, and editorial workflows to support more consistent
+              organic growth.
             </p>
           </article>
           <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
@@ -50,9 +51,9 @@ export default function Home() {
               Programmatic SEO Rollout
             </h3>
             <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Placeholder project for launching repeatable landing page systems
-              designed to support expansion at scale without sacrificing
-              quality.
+              A structured landing page rollout for expanding search coverage
+              while keeping page quality, relevance, and site structure in
+              place.
             </p>
           </article>
         </div>
@@ -63,27 +64,28 @@ export default function Home() {
             Experience
           </h2>
           <p className="mt-4 text-base leading-7 text-zinc-600">
-            Over the past 3+ years, I have worked across technical SEO,
-            content-driven growth, and search-focused systems that help teams
-            move from one-off execution to repeatable, measurable performance.
+            Over the past 3+ years, I have worked across technical SEO, content
+            strategy, and day-to-day search operations, helping teams turn SEO
+            priorities into work that is easier to maintain and improve over
+            time.
           </p>
         </div>
         <ul className="mt-8 grid gap-4 text-sm leading-6 text-zinc-700 sm:grid-cols-2">
           <li className="rounded-2xl border border-zinc-200 px-5 py-4">
-            Technical SEO strategy for complex websites and scalable site
-            structures
+            Technical SEO work covering crawlability, indexation, and site
+            architecture
           </li>
           <li className="rounded-2xl border border-zinc-200 px-5 py-4">
-            Content systems built around topic authority, search intent, and
-            editorial workflows
+            Content planning informed by search intent, topic coverage, and
+            editorial structure
           </li>
           <li className="rounded-2xl border border-zinc-200 px-5 py-4">
-            Cross-functional collaboration with product, engineering, and
-            content teams
+            Collaboration with product, engineering, and content teams on SEO
+            implementation
           </li>
           <li className="rounded-2xl border border-zinc-200 px-5 py-4">
-            Performance monitoring focused on visibility, crawl efficiency, and
-            growth opportunities
+            Ongoing monitoring of visibility, technical health, and search
+            opportunities
           </li>
         </ul>
       </section>
