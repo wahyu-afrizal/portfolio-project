@@ -1,0 +1,41 @@
+Day,Task,Priority,Status,Notes
+Day 1,Create GitHub repo,High,Done,Git repository is already initialized and active in this workspace.
+Day 1,Initialize Next.js app,High,Done,Next.js app is set up with app router and dependencies in package.json.
+Day 1,Setup folder structure,High,Done,App pages components public and docs folders are already in place.
+Day 1,Connect to Vercel,High,To Do,No Vercel configuration or deployment evidence found in the repo.
+Day 1,Create Sanity project,High,To Do,Sanity is not installed and no CMS folder or config exists.
+
+Day 2,Create Experience schema,High,To Do,No Sanity schema or content model exists yet.
+Day 2,Create Project schema,High,To Do,No Sanity schema or content model exists yet.
+Day 2,Create Blog schema,High,To Do,No Sanity schema or content model exists yet.
+Day 2,Add SEO fields,High,To Do,No CMS SEO fields or reusable SEO model found.
+Day 2,Input dummy content,Medium,Partial,Static placeholder content exists directly in page files but not in a CMS.
+
+Day 3,Define homepage sections,High,Done,Homepage hero selected projects and experience sections are implemented in app/page.tsx.
+Day 3,Define experience page structure,High,Done,Experience page structure is implemented with summary cards in app/experience/page.tsx.
+Day 3,Define projects page structure,High,Done,Projects page uses case-study style problem approach and impact sections.
+Day 3,Define blog structure,High,Partial,Blog listing exists but no blog detail route or post template yet.
+
+Day 4,Build layout (navbar/footer),High,Partial,Navbar is implemented in components/navbar.tsx but footer is still missing.
+Day 4,Build homepage,High,Done,Homepage is built as a static marketing page.
+Day 4,Build experience page,High,Done,Experience page is built with hardcoded entries.
+Day 4,Build projects page,High,Done,Projects page is built with three case-study style entries.
+Day 4,Build blog listing,High,Done,Blog listing page exists with three placeholder posts.
+Day 4,Build blog detail page,High,To Do,No dynamic or static detail route exists under app/blog.
+
+Day 5,Setup metadata,High,Partial,Global metadata exists in app/layout.tsx but per-page metadata is not implemented.
+Day 5,Setup Open Graph,Medium,To Do,No Open Graph metadata fields or images found.
+Day 5,Generate sitemap.xml,High,To Do,No sitemap route or generated sitemap file found.
+Day 5,Setup robots.txt,High,To Do,No robots route or public robots.txt file found.
+Day 5,Add structured data,High,To Do,No JSON-LD or schema markup implementation found.
+
+Day 6,Write project 1,High,Done,SEO Audit Systems content is written on the projects page.
+Day 6,Write project 2,High,Done,Structured Data Implementation content is written on the projects page.
+Day 6,Write project 3,High,Done,Content Architecture and Search Intent content is written on the projects page.
+Day 6,Write blog article 1,Medium,Partial,Blog card content exists but no full article page or body copy is implemented.
+Day 6,Write blog article 2,Medium,Partial,Blog card content exists but no full article page or body copy is implemented.
+
+Day 7,QA all pages,High,Partial,Core routes render in the repo but full QA checklist is still needed.
+Day 7,Check mobile responsiveness,High,Partial,Responsive utility classes are present but manual device QA is not documented.
+Day 7,Fix bugs,High,In Progress,No bug tracker exists yet and final polish work remains.
+Day 7,Deploy to production,High,To Do,Production deployment is not confirmed from this repository state.
