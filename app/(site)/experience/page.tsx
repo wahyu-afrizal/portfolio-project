@@ -1,40 +1,30 @@
-const experienceEntries = [
-  {
-    role: "Technical SEO Specialist",
-    context: "Growth-focused digital team supporting multi-page content websites",
-    description:
-      "Led technical SEO initiatives across content and platform improvements, with a focus on crawl efficiency, site structure, and implementation quality.",
-    highlights: [
-      "Built repeatable audit processes to prioritize technical fixes",
-      "Worked with engineering and content teams to resolve indexation and internal linking issues",
-      "Improved reporting clarity around search performance and technical health",
-    ],
-  },
-  {
-    role: "SEO Strategist",
-    context: "Content-led projects focused on organic visibility and topic development",
-    description:
-      "Developed SEO strategies that connected keyword research, search intent, and content planning into more scalable editorial systems.",
-    highlights: [
-      "Created topic cluster frameworks for long-term content expansion",
-      "Aligned content briefs with user intent and information architecture",
-      "Supported teams in turning SEO priorities into practical publishing workflows",
-    ],
-  },
-  {
-    role: "Search Growth Consultant",
-    context: "Project-based support for websites improving technical foundations",
-    description:
-      "Provided structured guidance for websites needing stronger search foundations, helping teams move from reactive fixes to more sustainable systems.",
-    highlights: [
-      "Reviewed site templates and structured data opportunities",
-      "Recommended scalable improvements for navigation, taxonomy, and page hierarchy",
-      "Helped define execution priorities based on technical impact and business context",
-    ],
-  },
-];
+import { getExperienceEntries } from "@/sanity/lib/queries";
 
-export default function ExperiencePage() {
+export const dynamic = "force-dynamic";
+
+function formatDateRange(startDate: string | null, endDate: string | null) {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    year: "numeric",
+  });
+
+  const start = startDate ? formatter.format(new Date(startDate)) : null;
+  const end = endDate ? formatter.format(new Date(endDate)) : "Present";
+
+  if (start && end) {
+    return `${start} - ${end}`;
+  }
+
+  if (start) {
+    return `${start} - Present`;
+  }
+
+  return endDate ? end : null;
+}
+
+export default async function ExperiencePage() {
+  const experienceEntries = await getExperienceEntries();
+
   return (
     <main className="bg-white px-6 py-24 text-zinc-900 sm:px-10 lg:px-16">
       <section className="mx-auto max-w-4xl">
@@ -49,40 +39,62 @@ export default function ExperiencePage() {
       </section>
 
       <section className="mx-auto mt-16 max-w-5xl space-y-8">
-        {experienceEntries.map((entry) => (
-          <article
-            key={entry.role}
-            className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-10"
-          >
-            <div className="max-w-3xl">
-              <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
-                {entry.role}
-              </h2>
-              <p className="mt-2 text-sm font-medium text-zinc-500">
-                {entry.context}
-              </p>
-              <p className="mt-5 text-base leading-7 text-zinc-700">
-                {entry.description}
-              </p>
-            </div>
+        {experienceEntries.length > 0 ? (
+          experienceEntries.map((entry) => {
+            const context = [entry.company, formatDateRange(entry.startDate, entry.endDate)]
+              .filter(Boolean)
+              .join(" · ");
 
-            <div className="mt-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-500">
-                Key Highlights
-              </p>
-              <ul className="mt-4 grid gap-3 text-sm leading-6 text-zinc-700 sm:grid-cols-2">
-                {entry.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="rounded-2xl border border-zinc-200 bg-white px-5 py-4"
-                  >
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            return (
+              <article
+                key={entry._id}
+                className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-10"
+              >
+                <div className="max-w-3xl">
+                  <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+                    {entry.role}
+                  </h2>
+                  {context ? (
+                    <p className="mt-2 text-sm font-medium text-zinc-500">
+                      {context}
+                    </p>
+                  ) : null}
+                  <p className="mt-5 text-base leading-7 text-zinc-700">
+                    {entry.summary || "More experience details will be added soon."}
+                  </p>
+                </div>
+
+                {entry.highlights && entry.highlights.length > 0 ? (
+                  <div className="mt-8">
+                    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                      Key Highlights
+                    </p>
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-zinc-700 sm:grid-cols-2">
+                      {entry.highlights.map((highlight) => (
+                        <li
+                          key={highlight}
+                          className="rounded-2xl border border-zinc-200 bg-white px-5 py-4"
+                        >
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </article>
+            );
+          })
+        ) : (
+          <article className="rounded-3xl border border-dashed border-zinc-300 bg-zinc-50 p-8 sm:p-10">
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+              No experience entries published yet
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-600">
+              Experience entries will appear here once they are published from
+              Sanity Studio.
+            </p>
           </article>
-        ))}
+        )}
       </section>
     </main>
   );

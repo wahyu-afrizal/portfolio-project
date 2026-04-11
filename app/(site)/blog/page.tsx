@@ -1,25 +1,29 @@
-const blogPosts = [
-  {
-    title: "What I Look for in a Technical SEO Audit",
-    excerpt:
-      "A practical walkthrough of the issues I review first, from crawl paths and indexation signals to internal linking and template consistency.",
-    meta: "Technical SEO",
-  },
-  {
-    title: "Building Content Plans Around Search Intent",
-    excerpt:
-      "Notes on turning keyword research into a clearer content structure that supports both user needs and long-term topic coverage.",
-    meta: "Content Strategy",
-  },
-  {
-    title: "Measuring SEO Progress Beyond Ranking Reports",
-    excerpt:
-      "A simple way to think about visibility, crawl efficiency, and page-level performance without relying only on position changes.",
-    meta: "March 2026",
-  },
-];
+import { getPosts } from "@/sanity/lib/queries";
 
-export default function BlogPage() {
+export const dynamic = "force-dynamic";
+
+function formatPostMeta(
+  publishedAt: string | null,
+  tags: string[] | null,
+): string {
+  if (publishedAt) {
+    return new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }).format(new Date(publishedAt));
+  }
+
+  if (tags && tags.length > 0) {
+    return tags[0];
+  }
+
+  return "Draft";
+}
+
+export default async function BlogPage() {
+  const blogPosts = await getPosts();
+
   return (
     <main className="bg-white px-6 py-24 text-zinc-900 sm:px-10 lg:px-16">
       <section className="mx-auto max-w-5xl">
@@ -35,20 +39,34 @@ export default function BlogPage() {
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {blogPosts.map((post) => (
-            <article
-              key={post.title}
-              className="flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6"
-            >
-              <p className="text-sm text-zinc-500">{post.meta}</p>
-              <h2 className="mt-3 text-xl font-semibold tracking-tight text-zinc-950">
-                {post.title}
+          {blogPosts.length > 0 ? (
+            blogPosts.map((post) => (
+              <article
+                key={post._id}
+                className="flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6"
+              >
+                <p className="text-sm text-zinc-500">
+                  {formatPostMeta(post.publishedAt, post.tags)}
+                </p>
+                <h2 className="mt-3 text-xl font-semibold tracking-tight text-zinc-950">
+                  {post.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-zinc-600 sm:text-[15px]">
+                  {post.excerpt || "A full article summary will be added soon."}
+                </p>
+              </article>
+            ))
+          ) : (
+            <article className="rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-6 md:col-span-3">
+              <h2 className="text-xl font-semibold tracking-tight text-zinc-950">
+                No blog posts published yet
               </h2>
-              <p className="mt-3 text-sm leading-6 text-zinc-600 sm:text-[15px]">
-                {post.excerpt}
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-600 sm:text-[15px]">
+                Articles will appear here once posts are published from Sanity
+                Studio.
               </p>
             </article>
-          ))}
+          )}
         </div>
       </section>
     </main>
