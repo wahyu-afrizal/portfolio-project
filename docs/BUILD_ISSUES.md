@@ -31,3 +31,11 @@
 - Impact: automated verification could not be completed from the original workspace.
 - Resolution: proceeded with manual validation through the live preview environment and documented the workspace/runtime blockers.
 - Follow-up: rerun lint and build from a stable runtime and filesystem location once the repo is relocated or normalized.
+
+## Repository Hardening Applied
+
+### 2026-04-11
+- Added `.nvmrc` pinned to Node `22.22.2`.
+- Added `.env.example` so required Sanity variables are explicit.
+- Added `npm run dev:webpack` for the stable local startup path.
+- Updated `README.md` with the working runtime and startup instructions.

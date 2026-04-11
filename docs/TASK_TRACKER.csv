@@ -37,5 +37,5 @@ Day 6,Write blog article 2,Medium,Partial,Post list content can now come from Sa
 
 Day 7,QA all pages,High,Partial,Projects blog and experience routes were validated in a clean preview workspace after CMS integration but full QA is still pending.
 Day 7,Check mobile responsiveness,High,Partial,Responsive utility classes are present but manual device QA is not documented.
-Day 7,Fix bugs,High,In Progress,Documented local build and runtime blockers in docs/BUILD_ISSUES.md and applied the CMS frontend integration.
+Day 7,Fix bugs,High,In Progress,Documented local build and runtime blockers in docs/BUILD_ISSUES.md applied the CMS frontend integration and added runtime bootstrap hardening with Node 22 and env scaffolding.
 Day 7,Deploy to production,High,To Do,Production deployment is not confirmed from this repository state.
