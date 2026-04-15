@@ -1,3 +1,19 @@
+import type { Metadata } from "next";
+
+import { createCanonicalMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createCanonicalMetadata("/", {
+  title: "SEO & Growth Systems",
+  description:
+    "Portfolio of Wahyu Afrizal, focused on technical SEO, site structure, content systems, and steady organic growth.",
+  openGraph: {
+    title: "SEO & Growth Systems",
+    description:
+      "Portfolio of Wahyu Afrizal, focused on technical SEO, site structure, content systems, and steady organic growth.",
+    url: "/",
+  },
+});
+
 export default function Home() {
   return (
     <main className="bg-white px-6 py-24 text-zinc-900 sm:px-10 lg:px-16">

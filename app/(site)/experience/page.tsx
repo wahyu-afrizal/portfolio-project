@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
+
+import { createCanonicalMetadata } from "@/lib/metadata";
 import { getExperienceEntries } from "@/sanity/lib/queries";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = createCanonicalMetadata("/experience", {
+  title: "Experience",
+  description:
+    "Experience across technical SEO, search strategy, and content systems with a focus on scalable implementation and measurable growth.",
+  openGraph: {
+    title: "Experience",
+    description:
+      "Experience across technical SEO, search strategy, and content systems with a focus on scalable implementation and measurable growth.",
+    url: "/experience",
+  },
+});
 
 function formatDateRange(startDate: string | null, endDate: string | null) {
   const formatter = new Intl.DateTimeFormat("en-US", {

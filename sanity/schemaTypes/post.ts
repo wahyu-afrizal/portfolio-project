@@ -24,6 +24,23 @@ export const postType = defineType({
       type: "text",
     }),
     defineField({
+      name: "featuredImage",
+      title: "Featured Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Alt Text",
+          type: "string",
+          description: "Describe the image for accessibility and previews.",
+          validation: (rule) => rule.required(),
+        }),
+      ],
+    }),
+    defineField({
       name: "publishedAt",
       title: "Published At",
       type: "datetime",

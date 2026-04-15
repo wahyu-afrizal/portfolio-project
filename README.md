@@ -32,6 +32,14 @@ npm install
 npm run dev:webpack
 ```
 
+For production builds in this environment, use the default build script:
+
+```bash
+npm run build
+```
+
+This repo pins `build` to `next build --webpack` because the default Turbopack production build is unreliable in the current sandboxed setup.
+
 Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
 Main routes:

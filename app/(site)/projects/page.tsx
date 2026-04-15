@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
+
+import { createCanonicalMetadata } from "@/lib/metadata";
 import { getProjects } from "@/sanity/lib/queries";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = createCanonicalMetadata("/projects", {
+  title: "Projects",
+  description:
+    "Case-study style SEO project summaries covering technical SEO operations, implementation quality, and scalable search growth systems.",
+  openGraph: {
+    title: "Projects",
+    description:
+      "Case-study style SEO project summaries covering technical SEO operations, implementation quality, and scalable search growth systems.",
+    url: "/projects",
+  },
+});
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
