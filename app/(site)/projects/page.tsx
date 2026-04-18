@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import PageIntro from "@/components/page-intro";
 import { createCanonicalMetadata } from "@/lib/metadata";
 import { getProjects } from "@/sanity/lib/queries";
 
@@ -21,58 +22,64 @@ export default async function ProjectsPage() {
   const projects = await getProjects();
 
   return (
-    <main className="bg-white px-6 py-24 text-zinc-900 sm:px-10 lg:px-16">
-      <section className="mx-auto max-w-4xl">
-        <h1 className="text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
-          Projects
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg">
-          A selection of case-study style project summaries focused on technical
-          SEO operations, implementation quality, and scalable search growth
-          systems.
-        </p>
-      </section>
+    <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
+      <PageIntro
+        eyebrow="Projects"
+        title="Case-study style SEO work with strong narrative structure."
+        description="A selection of project summaries focused on technical SEO operations, implementation quality, and scalable growth systems that stay grounded in real execution."
+        aside={
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-muted)]">
+              Must-have emphasis
+            </p>
+            <p className="mt-4 text-sm leading-7 text-[var(--color-copy)]">
+              Structured thinking, technical credibility, professional delivery,
+              and visible project outcomes.
+            </p>
+          </div>
+        }
+      />
 
-      <section className="mx-auto mt-16 max-w-5xl space-y-8">
+      <section className="mx-auto mt-16 max-w-6xl space-y-8">
         {projects.length > 0 ? (
           projects.map((project) => (
             <article
               key={project._id}
-              className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-10"
+              className="section-card rounded-[2rem] p-8 sm:p-10"
             >
               <div className="max-w-3xl">
-                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+                <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">
                   {project.title}
                 </h2>
                 {project.shortDescription ? (
-                  <p className="mt-4 text-base leading-7 text-zinc-700">
+                  <p className="mt-5 text-base leading-8 text-[var(--color-copy)]">
                     {project.shortDescription}
                   </p>
                 ) : null}
               </div>
 
-              <div className="mt-8 grid gap-6 md:grid-cols-3">
+              <div className="mt-8 grid gap-5 md:grid-cols-3">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-muted)]">
                     Problem
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-zinc-700">
+                  <p className="mt-3 rounded-[1.4rem] border border-[color:var(--color-border)] bg-[var(--color-panel)] p-5 text-sm leading-7 text-[var(--color-copy)]">
                     {project.problem || "Details will be added soon."}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-muted)]">
                     Approach
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-zinc-700">
+                  <p className="mt-3 rounded-[1.4rem] border border-[color:var(--color-border)] bg-[var(--color-panel)] p-5 text-sm leading-7 text-[var(--color-copy)]">
                     {project.approach || "Details will be added soon."}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-muted)]">
                     Impact
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-zinc-700">
+                  <p className="mt-3 rounded-[1.4rem] border border-[color:var(--color-border)] bg-[var(--color-panel)] p-5 text-sm leading-7 text-[var(--color-copy)]">
                     {project.impact || "Details will be added soon."}
                   </p>
                 </div>
@@ -80,11 +87,11 @@ export default async function ProjectsPage() {
             </article>
           ))
         ) : (
-          <article className="rounded-3xl border border-dashed border-zinc-300 bg-zinc-50 p-8 sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+          <article className="rounded-[2rem] border border-dashed border-[color:var(--color-border-strong)] bg-[var(--color-surface)] p-8 sm:p-10">
+            <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">
               No projects published yet
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-600">
+            <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--color-copy)]">
               Project case studies will appear here once they are published from
               Sanity Studio.
             </p>

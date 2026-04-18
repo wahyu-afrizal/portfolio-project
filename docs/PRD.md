@@ -22,6 +22,23 @@ Not just a portfolio — but a demonstration of technical SEO execution and scal
 - Experience highlight
 - CTA
 
+#### Homepage Direction Notes
+- Current homepage direction is too text-heavy for first impression.
+- Re-evaluate homepage content density and reduce copy so the landing experience feels lighter and easier to scan.
+- Use `https://www.raviklaassens.com/` as a discussion reference for:
+  - simpler section pacing
+  - stronger visual rhythm
+  - restrained but polished animation
+  - cleaner first-screen hierarchy
+- Important: do not copy the reference directly. Adapt only the parts that fit a personal SEO portfolio.
+- Fit criteria for this portfolio:
+  - should still feel credible and professional
+  - should not become too agency-like or overly artistic
+  - motion should stay subtle and intentional
+  - homepage should communicate positioning faster with less text
+- Open product question:
+  - How far should the homepage move toward a simpler, motion-led presentation before it starts weakening technical SEO credibility?
+
 ### 2. Experience Page
 - Career timeline
 - Role descriptions
@@ -73,6 +90,11 @@ Not just a portfolio — but a demonstration of technical SEO execution and scal
 - Complex animations
 - Overdesign
 - Feature-heavy system
+
+## Current UX Concerns
+- Homepage currently communicates too much through text blocks rather than pacing and hierarchy.
+- First impression should become simpler, lighter, and more immediate.
+- Need a design decision on whether selective animation and reduced copy improve the portfolio without making it feel less credible.
 
 ---
 

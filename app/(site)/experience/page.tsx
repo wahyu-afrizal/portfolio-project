@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import PageIntro from "@/components/page-intro";
 import { createCanonicalMetadata } from "@/lib/metadata";
 import { getExperienceEntries } from "@/sanity/lib/queries";
 
@@ -41,19 +42,25 @@ export default async function ExperiencePage() {
   const experienceEntries = await getExperienceEntries();
 
   return (
-    <main className="bg-white px-6 py-24 text-zinc-900 sm:px-10 lg:px-16">
-      <section className="mx-auto max-w-4xl">
-        <h1 className="text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
-          Experience
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg">
-          Experience across technical SEO, search strategy, and content systems,
-          with an emphasis on practical implementation, scalable processes, and
-          measurable organic growth.
-        </p>
-      </section>
+    <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
+      <PageIntro
+        eyebrow="Experience"
+        title="A track record built on practical SEO execution."
+        description="Experience across technical SEO, search strategy, and content systems with an emphasis on implementation quality, team clarity, and measurable organic growth."
+        aside={
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-muted)]">
+              Positioning
+            </p>
+            <p className="mt-4 text-sm leading-7 text-[var(--color-copy)]">
+              Strategic SEO consultant. Technical SEO specialist.
+              Growth-focused operator.
+            </p>
+          </div>
+        }
+      />
 
-      <section className="mx-auto mt-16 max-w-5xl space-y-8">
+      <section className="mx-auto mt-16 max-w-6xl space-y-8">
         {experienceEntries.length > 0 ? (
           experienceEntries.map((entry) => {
             const context = [entry.company, formatDateRange(entry.startDate, entry.endDate)]
@@ -63,32 +70,32 @@ export default async function ExperiencePage() {
             return (
               <article
                 key={entry._id}
-                className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-10"
+                className="section-card rounded-[2rem] p-8 sm:p-10"
               >
                 <div className="max-w-3xl">
-                  <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+                  <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">
                     {entry.role}
                   </h2>
                   {context ? (
-                    <p className="mt-2 text-sm font-medium text-zinc-500">
+                    <p className="mt-3 text-sm font-medium uppercase tracking-[0.16em] text-[var(--color-muted)]">
                       {context}
                     </p>
                   ) : null}
-                  <p className="mt-5 text-base leading-7 text-zinc-700">
+                  <p className="mt-6 text-base leading-8 text-[var(--color-copy)]">
                     {entry.summary || "More experience details will be added soon."}
                   </p>
                 </div>
 
                 {entry.highlights && entry.highlights.length > 0 ? (
                   <div className="mt-8">
-                    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-muted)]">
                       Key Highlights
                     </p>
-                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-zinc-700 sm:grid-cols-2">
+                    <ul className="mt-4 grid gap-3 text-sm leading-7 text-[var(--color-copy)] sm:grid-cols-2">
                       {entry.highlights.map((highlight) => (
                         <li
                           key={highlight}
-                          className="rounded-2xl border border-zinc-200 bg-white px-5 py-4"
+                          className="rounded-[1.4rem] border border-[color:var(--color-border)] bg-[var(--color-panel)] px-5 py-4"
                         >
                           {highlight}
                         </li>
@@ -100,11 +107,11 @@ export default async function ExperiencePage() {
             );
           })
         ) : (
-          <article className="rounded-3xl border border-dashed border-zinc-300 bg-zinc-50 p-8 sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+          <article className="rounded-[2rem] border border-dashed border-[color:var(--color-border-strong)] bg-[var(--color-surface)] p-8 sm:p-10">
+            <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">
               No experience entries published yet
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-600">
+            <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--color-copy)]">
               Experience entries will appear here once they are published from
               Sanity Studio.
             </p>

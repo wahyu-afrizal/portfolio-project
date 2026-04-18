@@ -10,13 +10,18 @@ You do not need to answer everything perfectly. Short, rough answers are enough.
 What should this website feel like when someone opens it for the first time?
 
 Example:
+
 - serious and credible
 - modern but not flashy
 - premium and thoughtful
 
 Your notes:
 
--
+-credible but still aesthetic
+
+- not too corporate
+- litle bit playfull
+  -not many distraction
 
 ---
 
@@ -25,6 +30,7 @@ Your notes:
 Who should this design impress first?
 
 Choose one or rank them:
+
 - recruiters
 - hiring managers
 - freelance clients
@@ -32,7 +38,11 @@ Choose one or rank them:
 
 Your notes:
 
--
+-freelance clients
+
+- recruiters
+- Marketing Manager
+- SEO peers
 
 ---
 
@@ -41,6 +51,7 @@ Your notes:
 How should you be perceived?
 
 Examples:
+
 - technical SEO specialist
 - systems thinker
 - execution-focused SEO professional
@@ -48,7 +59,9 @@ Examples:
 
 Your notes:
 
--
+- Strategic SEO consultant
+- Technical SEO specialist
+- Growth-focused
 
 ---
 
@@ -57,6 +70,7 @@ Your notes:
 Pick 3-5 words that should describe the visual style.
 
 Examples:
+
 - precise
 - editorial
 - calm
@@ -68,7 +82,10 @@ Examples:
 
 Your notes:
 
--
+- calm
+- bold
+- easy to read
+- not too many distraction
 
 ---
 
@@ -79,6 +96,7 @@ Answer in a simple way.
 ### Color Direction
 
 Examples:
+
 - mostly light
 - neutral tones
 - muted colors
@@ -87,11 +105,13 @@ Examples:
 
 Your notes:
 
+- neutral tones
 -
 
 ### Typography Direction
 
 Examples:
+
 - editorial
 - clean sans-serif
 - elegant serif + neutral sans-serif
@@ -99,11 +119,12 @@ Examples:
 
 Your notes:
 
--
+- just like proxima nova
 
 ### Layout Feel
 
 Examples:
+
 - minimal and spacious
 - structured grid
 - more magazine/editorial
@@ -112,18 +133,20 @@ Examples:
 
 Your notes:
 
--
+-minimal and spacious
+-structured grid
 
 ### Motion
 
 Examples:
+
 - almost none
 - subtle reveal only
 - smooth but restrained
 
 Your notes:
 
--
+- smooth but restrained
 
 ---
 
@@ -133,11 +156,13 @@ List websites you like. They do not have to be portfolio websites.
 If possible, add a short note about what you like from each one.
 
 Format:
+
 - URL - what I like
 
 Your references:
 
-- 
+- https://antikode.com/
+- https://www.raviklaassens.com/
 
 ---
 
@@ -146,6 +171,7 @@ Your references:
 What should the design NOT look or feel like?
 
 Examples:
+
 - too generic
 - too startup-looking
 - too playful
@@ -156,7 +182,8 @@ Examples:
 
 Your notes:
 
--
+- too corporate
+- too generic
 
 ---
 
@@ -165,6 +192,7 @@ Your notes:
 This helps the design stay honest.
 
 Answer what is true:
+
 - Do you have real case studies with real impact numbers?
 - Do you have a professional headshot?
 - Do you want the site to feel more personal-brand-driven or more portfolio-driven?
@@ -172,7 +200,10 @@ Answer what is true:
 
 Your notes:
 
--
+- yes i have real case studies with real impact numbers
+- yes i have a professional headshot
+- personal brand driven
+- writing heavy pages
 
 ---
 
@@ -181,6 +212,7 @@ Your notes:
 What absolutely needs to stand out in the UI?
 
 Examples:
+
 - technical SEO credibility
 - project outcomes
 - structured thinking
@@ -189,7 +221,10 @@ Examples:
 
 Your notes:
 
--
+- structured thinking
+- professionalism
+- technical SEO credibility
+- project outcomes
 
 ---
 
@@ -198,6 +233,7 @@ Your notes:
 Any ideas you want to try, even if you are not sure yet.
 
 Examples:
+
 - timeline section
 - statement/manifesto style hero
 - featured case study block
@@ -206,7 +242,7 @@ Examples:
 
 Your notes:
 
--
+-strong typography
 
 ---
 
@@ -222,8 +258,8 @@ If you are unsure, answer these quickly:
 
 Your answers:
 
-- Light or dark:
-- Calm or bold:
-- Editorial or product-style:
-- Personal or corporate:
-- Minimal or expressive:
+- Light or dark: Dark
+- Calm or bold: Calm
+- Editorial or product-style: Editorial
+- Personal or corporate: Personal
+- Minimal or expressive: Minimal

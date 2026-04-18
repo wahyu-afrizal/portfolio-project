@@ -39,3 +39,7 @@ Day 7,QA all pages,High,Partial,Projects blog and experience routes were validat
 Day 7,Check mobile responsiveness,High,Partial,Responsive utility classes are present but manual device QA is not documented.
 Day 7,Fix bugs,High,In Progress,Documented local build and runtime blockers in docs/BUILD_ISSUES.md applied the CMS frontend integration and added runtime bootstrap hardening with Node 22 and env scaffolding.
 Day 7,Deploy to production,High,To Do,Production deployment is not confirmed from this repository state.
+Day 8,Review homepage text density,High,To Do,Current homepage feels too text-heavy and should be simplified for faster first impression.
+Day 8,Benchmark Ravi Klaassens homepage direction,Medium,To Do,Discuss whether the lighter pacing and restrained animation approach from https://www.raviklaassens.com/ fits this portfolio without making it feel too agency-like.
+Day 8,Decide homepage motion strategy,High,To Do,Define whether to keep minimal motion or introduce subtle hero and section transitions for better polish.
+Day 8,Refactor homepage content hierarchy,High,To Do,Reduce copy on the homepage and improve scanability while preserving technical SEO credibility and professionalism.

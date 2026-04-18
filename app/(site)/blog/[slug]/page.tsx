@@ -48,7 +48,7 @@ function flushList(
   nodes.push(
     <ListTag
       key={`list-${key}`}
-      className="ml-6 space-y-3 text-base leading-8 text-zinc-700 marker:text-zinc-500"
+      className="ml-6 space-y-3 text-base leading-8 text-[var(--color-copy)] marker:text-[var(--color-muted)]"
     >
       {items.map((item) => (
         <li key={item._key}>{getBlockText(item)}</li>
@@ -95,7 +95,7 @@ function renderBody(blocks: PortableTextBlock[] | null) {
       nodes.push(
         <h2
           key={`block-${key}`}
-          className="mt-12 text-2xl font-semibold tracking-tight text-zinc-950"
+          className="mt-12 font-display text-4xl leading-none tracking-[-0.04em] text-[var(--color-ink)]"
         >
           {text}
         </h2>,
@@ -108,7 +108,7 @@ function renderBody(blocks: PortableTextBlock[] | null) {
       nodes.push(
         <h3
           key={`block-${key}`}
-          className="mt-10 text-xl font-semibold tracking-tight text-zinc-950"
+          className="mt-10 text-2xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]"
         >
           {text}
         </h3>,
@@ -121,7 +121,7 @@ function renderBody(blocks: PortableTextBlock[] | null) {
       nodes.push(
         <blockquote
           key={`block-${key}`}
-          className="border-l-2 border-zinc-300 pl-6 text-lg leading-8 text-zinc-700"
+          className="rounded-r-[1.5rem] border-l-2 border-[color:var(--color-border-strong)] bg-[var(--color-surface)] py-2 pl-6 pr-6 text-lg leading-8 text-[var(--color-copy)]"
         >
           {text}
         </blockquote>,
@@ -131,7 +131,7 @@ function renderBody(blocks: PortableTextBlock[] | null) {
     }
 
     nodes.push(
-      <p key={`block-${key}`} className="text-base leading-8 text-zinc-700">
+      <p key={`block-${key}`} className="text-base leading-8 text-[var(--color-copy)]">
         {text}
       </p>,
     );
@@ -203,30 +203,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <main className="bg-white px-6 py-24 text-zinc-900 sm:px-10 lg:px-16">
-      <article className="mx-auto max-w-3xl">
+    <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
+      <article className="mx-auto max-w-4xl">
         <Link
           href="/blog"
-          className="text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-900"
+          className="text-sm font-medium text-[var(--color-muted)]"
         >
           Back to blog
         </Link>
 
-        <header className="mt-8 border-b border-zinc-200 pb-10">
-          <p className="text-sm text-zinc-500">
+        <header className="mt-8 border-b border-[color:var(--color-border)] pb-10">
+          <p className="text-sm uppercase tracking-[0.16em] text-[var(--color-muted)]">
             {formatPublishedDate(post.publishedAt)}
             {post.tags && post.tags.length > 0 ? ` · ${post.tags.join(" · ")}` : null}
           </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
+          <h1 className="mt-5 max-w-3xl font-display text-5xl leading-none tracking-[-0.05em] text-[var(--color-ink)] sm:text-6xl">
             {post.title}
           </h1>
           {post.excerpt ? (
-            <p className="mt-6 text-lg leading-8 text-zinc-600">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--color-copy)]">
               {post.excerpt}
             </p>
           ) : null}
           {post.featuredImage?.asset ? (
-            <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-3xl bg-zinc-100">
+            <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[2rem] bg-[var(--color-surface-strong)] shadow-[var(--shadow-soft)]">
               <Image
                 src={urlFor(post.featuredImage).width(1600).height(900).url()}
                 alt={post.featuredImage.alt || post.title}
@@ -239,7 +239,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           ) : null}
         </header>
 
-        <div className="mt-10 space-y-6">{renderBody(post.body)}</div>
+        <div className="mt-10 space-y-6 text-[var(--color-copy)]">
+          {renderBody(post.body)}
+        </div>
       </article>
     </main>
   );

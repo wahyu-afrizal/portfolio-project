@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
+import PageIntro from "@/components/page-intro";
 import { createCanonicalMetadata } from "@/lib/metadata";
 import { urlFor } from "@/sanity/lib/image";
 import { getPosts } from "@/sanity/lib/queries";
@@ -43,28 +44,34 @@ export default async function BlogPage() {
   const blogPosts = await getPosts();
 
   return (
-    <main className="bg-white px-6 py-24 text-zinc-900 sm:px-10 lg:px-16">
-      <section className="mx-auto max-w-5xl">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
-            Blog
-          </h1>
-          <p className="mt-6 text-base leading-7 text-zinc-600 sm:text-lg">
-            A place to share SEO insights, small experiments, and practical
-            learnings from technical work, content planning, and organic growth
-            projects.
-          </p>
-        </div>
+    <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
+      <PageIntro
+        eyebrow="Writing"
+        title="Notes on technical SEO, experiments, and structured growth work."
+        description="A writing-led space for practical lessons, technical observations, and ideas worth documenting clearly."
+        aside={
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-muted)]">
+              Content reality
+            </p>
+            <p className="mt-4 text-sm leading-7 text-[var(--color-copy)]">
+              Writing-heavy pages with strong readability and restrained visual
+              noise.
+            </p>
+          </div>
+        }
+      />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+      <section className="mx-auto mt-14 max-w-6xl">
+        <div className="grid gap-6 md:grid-cols-3">
           {blogPosts.length > 0 ? (
             blogPosts.map((post) => (
               <article
                 key={post._id}
-                className="flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white"
+                className="section-card flex h-full flex-col overflow-hidden rounded-[1.75rem]"
               >
                 {post.featuredImage?.asset ? (
-                  <div className="relative aspect-[16/10] w-full bg-zinc-100">
+                  <div className="relative aspect-[16/10] w-full bg-[var(--color-surface-strong)]">
                     <Image
                       src={urlFor(post.featuredImage).width(960).height(600).url()}
                       alt={post.featuredImage.alt || post.title}
@@ -74,25 +81,25 @@ export default async function BlogPage() {
                     />
                   </div>
                 ) : null}
-                <div className="flex h-full flex-col p-6">
-                  <p className="text-sm text-zinc-500">
+                <div className="flex h-full flex-col p-6 sm:p-7">
+                  <p className="text-sm text-[var(--color-muted)]">
                     {formatPostMeta(post.publishedAt, post.tags)}
                   </p>
-                  <h2 className="mt-3 text-xl font-semibold tracking-tight text-zinc-950">
+                  <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">
                     {post.title}
                   </h2>
-                  <p className="mt-3 text-sm leading-6 text-zinc-600 sm:text-[15px]">
+                  <p className="mt-4 text-sm leading-7 text-[var(--color-copy)] sm:text-[0.96rem]">
                     {post.excerpt || "A full article summary will be added soon."}
                   </p>
                   {post.slug ? (
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="mt-auto pt-6 text-sm font-medium text-zinc-900 transition-colors hover:text-zinc-600"
+                      className="mt-auto pt-7 text-sm font-medium text-[var(--color-ink)]"
                     >
                       Read article
                     </Link>
                   ) : (
-                    <p className="mt-auto pt-6 text-sm font-medium text-zinc-400">
+                    <p className="mt-auto pt-7 text-sm font-medium text-[var(--color-muted)]">
                       Slug required to publish this article page
                     </p>
                   )}
@@ -100,11 +107,11 @@ export default async function BlogPage() {
               </article>
             ))
           ) : (
-            <article className="rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-6 md:col-span-3">
-              <h2 className="text-xl font-semibold tracking-tight text-zinc-950">
+            <article className="rounded-[1.75rem] border border-dashed border-[color:var(--color-border-strong)] bg-[var(--color-surface)] p-6 md:col-span-3">
+              <h2 className="text-2xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">
                 No blog posts published yet
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-600 sm:text-[15px]">
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--color-copy)] sm:text-[0.96rem]">
                 Articles will appear here once posts are published from Sanity
                 Studio.
               </p>

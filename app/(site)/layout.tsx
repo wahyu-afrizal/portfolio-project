@@ -1,4 +1,5 @@
 import Navbar from "@/components/navbar";
+import SiteFooter from "@/components/site-footer";
 
 export default function SiteLayout({
   children,
@@ -6,9 +7,11 @@ export default function SiteLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex min-h-full flex-col">
+    <div className="site-frame">
+      <div aria-hidden="true" className="site-frame__glow" />
       <Navbar />
-      <div className="flex-1">{children}</div>
+      <div className="site-frame__content">{children}</div>
+      <SiteFooter />
     </div>
   );
 }
