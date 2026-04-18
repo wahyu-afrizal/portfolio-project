@@ -23,21 +23,37 @@ Not just a portfolio — but a demonstration of technical SEO execution and scal
 - CTA
 
 #### Homepage Direction Notes
-- Current homepage direction is too text-heavy for first impression.
-- Re-evaluate homepage content density and reduce copy so the landing experience feels lighter and easier to scan.
-- Use `https://www.raviklaassens.com/` as a discussion reference for:
-  - simpler section pacing
-  - stronger visual rhythm
-  - restrained but polished animation
-  - cleaner first-screen hierarchy
-- Important: do not copy the reference directly. Adapt only the parts that fit a personal SEO portfolio.
-- Fit criteria for this portfolio:
-  - should still feel credible and professional
-  - should not become too agency-like or overly artistic
-  - motion should stay subtle and intentional
-  - homepage should communicate positioning faster with less text
+- Homepage has been restructured into a narrative flow:
+  - Hero
+  - Point of view
+  - Authority
+  - Selected work
+  - Writing / insight
+  - CTA
+- The homepage direction is now `statement-led` rather than a standard portfolio overview.
+- Motion has been introduced selectively through:
+  - hero choreography
+  - scroll reveal
+  - parallax
+  - interactive card motion
+  - route transitions
+- The current visual direction should stay:
+  - light editorial
+  - premium
+  - calm
+  - typography-led
+  - one continuous canvas across the page
+- Reference inputs used in discussion:
+  - `https://www.raviklaassens.com/`
+  - `https://www.ogilvy.com/`
+- Important: do not copy reference sites literally. Adapt only the pacing, atmosphere, and confidence that fit a personal SEO portfolio.
+- Current homepage implementation status:
+  - narrative structure is mostly resolved
+  - motion architecture is in place
+  - visual continuity improved significantly
+  - further polish is still needed on background treatment, section continuity, and final art direction quality
 - Open product question:
-  - How far should the homepage move toward a simpler, motion-led presentation before it starts weakening technical SEO credibility?
+  - How far should the homepage move toward a cinematic editorial presentation before it starts weakening technical SEO credibility?
 
 ### 2. Experience Page
 - Career timeline
@@ -92,9 +108,16 @@ Not just a portfolio — but a demonstration of technical SEO execution and scal
 - Feature-heavy system
 
 ## Current UX Concerns
-- Homepage currently communicates too much through text blocks rather than pacing and hierarchy.
-- First impression should become simpler, lighter, and more immediate.
-- Need a design decision on whether selective animation and reduced copy improve the portfolio without making it feel less credible.
+- Homepage structure is in a much better place, but final visual polish is not complete yet.
+- Need final design calibration on:
+  - background continuity
+  - section separation vs. seamless flow
+  - how much container treatment should remain on the homepage
+- Experience page still needs responsive QA / fixes.
+- Blog page schema/meta review is still pending.
+- CMS coverage is still partial:
+  - Projects, Experience, and Blog are CMS-backed
+  - Homepage copy and shared shell copy are still mostly code-driven
 
 ---
 

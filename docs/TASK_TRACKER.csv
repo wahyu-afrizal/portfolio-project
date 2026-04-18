@@ -43,3 +43,10 @@ Day 8,Review homepage text density,High,To Do,Current homepage feels too text-he
 Day 8,Benchmark Ravi Klaassens homepage direction,Medium,To Do,Discuss whether the lighter pacing and restrained animation approach from https://www.raviklaassens.com/ fits this portfolio without making it feel too agency-like.
 Day 8,Decide homepage motion strategy,High,To Do,Define whether to keep minimal motion or introduce subtle hero and section transitions for better polish.
 Day 8,Refactor homepage content hierarchy,High,To Do,Reduce copy on the homepage and improve scanability while preserving technical SEO credibility and professionalism.
+Day 9,Redesign homepage narrative structure,High,Done,Homepage now follows a statement-led narrative flow with hero point-of-view authority selected work insight and CTA sections.
+Day 9,Implement homepage motion system,High,Done,Added isolated motion components for hero choreography scroll reveal parallax interactive cards route transitions and manifesto typing.
+Day 9,Refine homepage art direction,High,Partial,Light editorial direction is established and the page now feels more continuous but final visual polish is still needed.
+Day 9,Finish homepage background continuity,High,In Progress,Single-canvas background direction is in place but may still need another pass to fully remove remaining section contrast.
+Day 9,QA Experience responsive layout,High,To Do,Experience page still needs manual responsive review and fixes if layout issues remain.
+Day 9,Review blog schema and metadata,High,To Do,Blog listing and detail experience need final schema/meta review and confirmation.
+Day 9,Plan homepage CMS migration,Medium,To Do,Homepage and shared shell content are still hardcoded and should later move into Sanity site settings or equivalent content model.
