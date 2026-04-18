@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
+import Breadcrumbs from "@/components/breadcrumbs";
 import PageIntro from "@/components/page-intro";
+import { createPageBreadcrumbs } from "@/lib/breadcrumbs";
 import { createCanonicalMetadata } from "@/lib/metadata";
 import { getExperienceEntries } from "@/sanity/lib/queries";
 
@@ -40,9 +42,13 @@ function formatDateRange(startDate: string | null, endDate: string | null) {
 
 export default async function ExperiencePage() {
   const experienceEntries = await getExperienceEntries();
+  const breadcrumbs = createPageBreadcrumbs("Experience");
 
   return (
     <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
+      <div className="site-shell">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
       <PageIntro
         eyebrow="Experience"
         title="A track record built on practical SEO execution."

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
+import Breadcrumbs from "@/components/breadcrumbs";
 import PageIntro from "@/components/page-intro";
+import { createPageBreadcrumbs } from "@/lib/breadcrumbs";
 import { createCanonicalMetadata } from "@/lib/metadata";
 import { getProjects } from "@/sanity/lib/queries";
 
@@ -20,9 +22,13 @@ export const metadata: Metadata = createCanonicalMetadata("/projects", {
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
+  const breadcrumbs = createPageBreadcrumbs("Projects");
 
   return (
     <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
+      <div className="site-shell">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
       <PageIntro
         eyebrow="Projects"
         title="Case-study style SEO work with strong narrative structure."

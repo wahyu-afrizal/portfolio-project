@@ -2,9 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import InteractiveCard from "@/components/motion/interactive-card";
-import ParallaxY from "@/components/motion/parallax-y";
 import ScrollReveal from "@/components/motion/scroll-reveal";
-import TypeLine from "@/components/motion/type-line";
 import { createCanonicalMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createCanonicalMetadata("/", {
@@ -24,9 +22,6 @@ const manifestoLines = [
   "Structure beats noise when growth needs to last.",
   "Technical depth matters when it changes how the brand is experienced.",
 ];
-
-const manifestoTypingSpeed = 24;
-const manifestoLineGap = 0.28;
 
 const authorityPillars = [
   {
@@ -81,7 +76,6 @@ const insightTeasers = [
 export default function Home() {
   const featuredProject = projectHighlights.find((item) => item.featured);
   const secondaryProjects = projectHighlights.filter((item) => !item.featured);
-  let cumulativeManifestoDelay = 0;
 
   return (
     <main className="home-page">
@@ -123,26 +117,15 @@ export default function Home() {
         </ScrollReveal>
 
         <div className="manifesto-block__lines">
-          {manifestoLines.map((line, index) => {
-            const delay = cumulativeManifestoDelay;
-            cumulativeManifestoDelay +=
-              line.length * (manifestoTypingSpeed / 1000) + manifestoLineGap;
-
-            return (
-              <ParallaxY
-                key={line}
-                from={24 + index * 10}
-                to={-18 - index * 8}
+          {manifestoLines.map((line, index) => (
+            <ScrollReveal key={line} delay={0.06 * index} distance={14}>
+              <p
+                className={`manifesto-block__line font-display${index % 2 === 1 ? " manifesto-block__line--right" : ""}`}
               >
-                <TypeLine
-                  className={`manifesto-block__line font-display${index % 2 === 1 ? " manifesto-block__line--right" : ""}`}
-                  text={line}
-                  delay={delay}
-                  speed={manifestoTypingSpeed}
-                />
-              </ParallaxY>
-            );
-          })}
+                {line}
+              </p>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
@@ -247,32 +230,30 @@ export default function Home() {
       </section>
 
       <section className="site-shell insight-block">
-        <ParallaxY from={18} to={-18}>
-          <ScrollReveal className="insight-block__header">
-            <div className="insight-block__intro">
-              <p className="section-label">Writing / insight</p>
-              <h2 className="insight-block__title font-display">
-                Ideas are part of the work, not a separate tab.
-              </h2>
-            </div>
-            <p className="insight-block__copy">
-              Writing is where the quieter parts of the method become visible:
-              structure, diagnosis, and the logic behind sustainable organic
-              growth.
-            </p>
-          </ScrollReveal>
-        </ParallaxY>
+        <ScrollReveal className="insight-block__header" distance={14}>
+          <div className="insight-block__intro">
+            <p className="section-label">Writing / insight</p>
+            <h2 className="insight-block__title font-display">
+              Ideas are part of the work, not a separate tab.
+            </h2>
+          </div>
+          <p className="insight-block__copy">
+            Writing is where the quieter parts of the method become visible:
+            structure, diagnosis, and the logic behind sustainable organic
+            growth.
+          </p>
+        </ScrollReveal>
 
         <div className="insight-block__grid">
           {insightTeasers.map((teaser, index) => (
-            <ScrollReveal key={teaser} delay={index * 0.08}>
+            <div key={teaser}>
               <InteractiveCard intensity="soft">
                 <article className="insight-card">
                   <p className="section-label">Insight 0{index + 1}</p>
                   <p className="insight-card__title">{teaser}</p>
                 </article>
               </InteractiveCard>
-            </ScrollReveal>
+            </div>
           ))}
         </div>
 

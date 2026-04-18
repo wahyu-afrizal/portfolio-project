@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
+import Breadcrumbs from "@/components/breadcrumbs";
 import { siteName } from "@/lib/metadata";
 import { urlFor } from "@/sanity/lib/image";
 import {
@@ -205,12 +205,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
       <article className="mx-auto max-w-4xl">
-        <Link
-          href="/blog"
-          className="text-sm font-medium text-[var(--color-muted)]"
-        >
-          Back to blog
-        </Link>
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Blog", href: "/blog" },
+            { label: post.title },
+          ]}
+        />
 
         <header className="mt-8 border-b border-[color:var(--color-border)] pb-10">
           <p className="text-sm uppercase tracking-[0.16em] text-[var(--color-muted)]">

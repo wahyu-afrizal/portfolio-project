@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
+import Breadcrumbs from "@/components/breadcrumbs";
 import PageIntro from "@/components/page-intro";
+import { createPageBreadcrumbs } from "@/lib/breadcrumbs";
 import { createCanonicalMetadata } from "@/lib/metadata";
 import { urlFor } from "@/sanity/lib/image";
 import { getPosts } from "@/sanity/lib/queries";
@@ -42,9 +44,13 @@ function formatPostMeta(
 
 export default async function BlogPage() {
   const blogPosts = await getPosts();
+  const breadcrumbs = createPageBreadcrumbs("Blog");
 
   return (
     <main className="px-6 pb-20 pt-10 sm:px-10 sm:pt-14 lg:px-16">
+      <div className="site-shell">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
       <PageIntro
         eyebrow="Writing"
         title="Notes on technical SEO, experiments, and structured growth work."

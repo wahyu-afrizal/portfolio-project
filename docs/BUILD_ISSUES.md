@@ -39,3 +39,23 @@
 - Added `.env.example` so required Sanity variables are explicit.
 - Added `npm run dev:webpack` for the stable local startup path.
 - Updated `README.md` with the working runtime and startup instructions.
+
+## 2026-04-18
+
+### 6. Homepage scroll stutter during section transitions
+- Symptom: PM reported visible stutter / lag while scrolling into large editorial homepage sections, including `Point of view` and `Writing / insight`.
+- Impact: homepage does not yet meet the expected quality bar for motion smoothness and functional polish.
+- Investigation:
+  - reduced or removed section-specific motion in problem areas
+  - reduced global paint-heavy effects such as sticky header blur and decorative background overlays in the isolated preview branch
+- Current assessment: the issue appears to be a combination of motion cost and global repaint cost, not a single isolated component bug.
+- Current status: still open until browser QA confirms the homepage scroll feel is stable.
+
+### 7. Mobile navigation and breadcrumb UX are incomplete
+- Symptom: the current navbar does not provide a dedicated mobile hamburger experience, and the site has no breadcrumb layer despite being an SEO-led portfolio.
+- Impact: mobile navigation feels unfinished, and deeper pages lack contextual wayfinding expected from a structurally strong SEO site.
+- Current status: implementation is now in place in the isolated builder branch, but final browser QA is still pending.
+- Follow-up:
+  - complete manual browser QA for mobile nav open/close behavior, `Escape` close, link-click close, and scroll lock
+  - verify breadcrumb presentation across interior pages after moving it out of the shared intro block
+  - do not mark this work complete until the interaction and placement are manually checked in browser
